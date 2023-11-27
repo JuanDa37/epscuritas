@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Mis médicos - Curitas S.A.</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/10086/10086922.png" type="image/x-icon" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+	<style>
+		* {
+			font-family: "Lato", sans-serif;
+			margin: 0%;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.submit {
+			border: none;
+			outline: none;
+			width: 245px;
+			height: 65px;
+			background: #ececec;
+			border-radius: 5px;
+			transition: 0.4s;
+			font-weight: bold;
+			cursor: default;
+		}
+
+		.submit:hover {
+			/* background: rgba(37,95,156,0.9); */
+			background: #37CDCD;
+			color: #fff;
+		}
+
+		.submit2 {
+			border: none;
+			outline: none;
+			width: 70px;
+			height: 45px;
+			background: #ececec;
+			border-radius: 5px;
+			transition: 0.4s;
+			font-weight: bold;
+			cursor: default;
+		}
+
+		.submit2:hover {
+			/* background: rgba(37,95,156,0.9); */
+			background: #37CDCD;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		.submit3 {
+			border: none;
+			outline: none;
+			width: 70px;
+			height: 45px;
+			background: #6C757D;
+			border-radius: 5px;
+			transition: 0.4s;
+			font-weight: bold;
+			cursor: default;
+		}
+
+		.submit3:hover {
+			background: rgb(139, 148, 154);
+		}
+
+		.card:hover {
+			box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+		}
+
+		#cont:hover {
+			background: #ececec;
+
+		}
+
+		#an:hover {
+			cursor: pointer;
+		}
+	</style>
+	<header></header>
+	<main>
+		<div class="container-fluid p-0">
+			<div class="row">
+				<div class="col-3 p-0" style="width: 300px; height: 750px; background: #d2d2d22c;">
+					<div class="container d-flex justify-content-center mt-4">
+						<a class="navbar-brand d-flex align-items-center" th:href="@{/homeUsuario}">
+							<img src="https://cdn-icons-png.flaticon.com/512/10086/10086922.png" alt="Avatar Logo"
+								style="width: 45px;">
+							<span class="text-black fw-bold fs-4" style="margin-left: 15px;">CURITAS S.A.</span>
+						</a>
+					</div>
+					<div id="cont" class="p-3 d-flex justify-content-center" style="margin-top: 27%;">
+						<a class="navbar-brand d-flex align-items-center" th:href="@{/homeUsuario}">
+							<i class='bx bx-sm bxs-dashboard' style="margin-left: 10px;"></i>
+							<span class="fw-bold fs-6" style="margin-left: 15px;">Dashboard</span>
+						</a>
+					</div>
+					<div id="cont" class="p-3 d-flex justify-content-center" style="margin-top: 10%;">
+						<a class="navbar-brand d-flex align-items-center" th:href="@{/vermisdatos}">
+							<i class='bx bx-sm bxs-user-circle'></i>
+							<span class="text-black fw-bold fs-6" style="margin-left: 15px;">Mi cuenta</span>
+						</a>
+					</div>
+					<div id="cont" class="p-3 d-flex justify-content-center" style="margin-top: 10%; background: #ececec;">
+						<a class="navbar-brand d-flex align-items-center" th:href="@{/mismedicos}">
+							<i class='bx bx-sm bxs-face-mask' style="margin-left: 17px; color: #37CDCD;"></i>
+							<span class="fw-bold fs-6" style="margin-left: 15px; color: #37CDCD;">Mis médicos</span>
+						</a>
+					</div>
+					<div id="cont" class="p-3 d-flex justify-content-center"
+						style="margin-top: 10%;">
+						<a class="navbar-brand d-flex align-items-center" th:href="@{/eps/usuario}">
+							<i class='bx bx-sm bxs-location-plus' style="margin-left: 50px;"></i>
+							<span class="fw-bold fs-6" style="margin-left: 15px;">Ubicaciones EPS</span>
+						</a>
+					</div>
+					<div class="container d-flex justify-content-center" style="margin-top: 66%;">
+						<div class="input-field">
+							<form th:action="@{/loginUsuario}">
+								<input type="submit" class="submit" name="log-out" id="log-out" value="Cerrar sesión">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-9">
+					<div class="container-fluid">
+						<div class="row">
+							<h5 class="fw-bold mt-4" style="margin-left: 15px;">Mis médicos - Listado</h5>
+							<h6 style="color: #37CDCD; font-weight: bold; margin-left: 15px;">Fecha: <span
+									style="color: #000; font-weight: 400;"
+									th:text="${#dates.format(#dates.createNow(), 'MMMM d yyyy')}"></span></h6>
+							<div class="my-4 d-flex align-items-center"
+								style="margin-left: 1020px; position: absolute;">
+								<i class='bx bx-md bxs-user-circle mx-2'></i>
+								<h6 class="fw-bold" style="text-decoration: none; color: #000;" href="#">
+									Usuario afiliado
+								</h6>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid mt-4">
+						<table class="table table-hover my-3" style="margin-left: 2%;">
+							<thead class="table-white">
+								<tr class="text-center">
+									<td><strong>Nombre</strong></td>
+									<td><strong>Apellido</strong></td>
+									<td><strong>Correo</strong></td>
+									<td><strong>Especialidad</strong></td>
+									<td><strong>Sede</strong></td>
+								</tr>
+							</thead>
+							<tbody class="text-center">
+								<tr th:each="medi, iterStat : ${medico}">
+									<td>[[ ${medi?.nombre} ]]</td>
+									<td>[[ ${medi?.apellido} ]]</td>
+									<td>[[ ${medi?.email} ]]</td>
+									<td>[[ ${medi?.especialidad} ]]</td>
+									<td>[[ ${medi?.eps?.sede } + ': ' + ${medi?.eps?.direccion}]]</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<footer></footer>
+
+	<!-- Bootstrap JavaScript Libraries -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
