@@ -1,6 +1,6 @@
 package com.proyectonu1.pdf;
 
-import java.awt.Color;
+/*import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 import org.springframework.stereotype.Component;
@@ -18,12 +18,12 @@ import com.lowagie.text.pdf.PdfWriter;
 import com.proyectonu1.app.entidades.UsuarioDocument;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;*/
 
 @Component("lista-usuario")
 public class ListarUsuarioPDF /*extends AbstractPdfView*/{
 
-	/*@Override
+	/*/*@Override
 	protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
@@ -127,5 +127,5 @@ public class ListarUsuarioPDF /*extends AbstractPdfView*/{
 		
 		document.add(tablaTitulo);
 		document.add(tablaUsuarios);	
-	}*/
+	}*/*/
 }
