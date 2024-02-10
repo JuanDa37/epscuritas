@@ -19,7 +19,7 @@ import com.proyectonu1.app.entidades.historiaClinica;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;*/
 
-@Component("miscitasmedico")
+/*@Component("miscitasmedico")*/
 public class ListaHistoriaClinicaUsuarioPDF /*extends AbstractPdfView*/ {
 
 	/*@Override
