@@ -21,9 +21,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component("lista-medico")
-public class ListaMedicoPDF extends AbstractPdfView {
+public class ListaMedicoPDF /*extends AbstractPdfView*/ {
 	
-	@Override
+	/*@Override
 	protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
@@ -127,5 +127,5 @@ public class ListaMedicoPDF extends AbstractPdfView {
 		
 		document.add(tablaTitulo);
 		document.add(tablaUsuarios);	
-	}
+	}*/
 }
