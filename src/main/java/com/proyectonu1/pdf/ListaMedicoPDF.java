@@ -20,7 +20,7 @@ import com.proyectonu1.app.entidades.MedicoDocument;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;*/
 
-@Component("lista-medico")
+/*@Component("lista-medico")*/
 public class ListaMedicoPDF /*extends AbstractPdfView*/ {
 	
 	/*@Override
