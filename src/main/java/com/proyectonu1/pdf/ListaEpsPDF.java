@@ -1,6 +1,6 @@
 package com.proyectonu1.pdf;
 
-import java.awt.Color;
+/*import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 import com.proyectonu1.app.entidades.eps;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;*/
 
 @Component("lista-eps")
 public class ListaEpsPDF /*extends AbstractPdfView*/{
