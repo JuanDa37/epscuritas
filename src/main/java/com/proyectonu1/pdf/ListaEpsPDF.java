@@ -18,7 +18,7 @@ import com.proyectonu1.app.entidades.eps;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;*/
 
-@Component("lista-eps")
+/*@Component("lista-eps")*/
 public class ListaEpsPDF /*extends AbstractPdfView*/{
 	/*@Override
 	protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer,
